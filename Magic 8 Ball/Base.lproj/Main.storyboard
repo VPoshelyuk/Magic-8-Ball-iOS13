@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rgg-6L-jD6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="systemBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-av-mfV">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Me Anything..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCE-KW-npf">
+                                <rect key="frame" x="20" y="193" width="374" height="53"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="45"/>
+                                <color key="textColor" red="0.94155573839999995" green="0.94563394779999999" blue="0.94555431599999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnI-pX-efp">
+                                <rect key="frame" x="134" y="621" width="146" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94155573839999995" green="0.94563394779999999" blue="0.94555431599999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="35"/>
+                                <state key="normal" title="Ask">
+                                    <color key="titleColor" red="0.26885805680000002" green="0.72156392020000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="askClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DUa-Yn-po7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.26885805680000002" green="0.72156392020000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="aCE-KW-npf" firstAttribute="top" secondItem="lat-Or-rLE" secondAttribute="top" constant="149" id="HQv-0q-FBg"/>
+                            <constraint firstItem="aCE-KW-npf" firstAttribute="centerX" secondItem="hwg-av-mfV" secondAttribute="centerX" id="Izv-ww-9mF"/>
+                            <constraint firstItem="lat-Or-rLE" firstAttribute="bottom" secondItem="hwg-av-mfV" secondAttribute="bottom" constant="294" id="Xhu-xR-l3D"/>
+                            <constraint firstItem="aCE-KW-npf" firstAttribute="trailing" secondItem="rgg-6L-jD6" secondAttribute="trailingMargin" id="flV-nk-vsL"/>
+                            <constraint firstItem="hwg-av-mfV" firstAttribute="leading" secondItem="lat-Or-rLE" secondAttribute="leading" constant="87" id="vNd-Aa-uA7"/>
+                            <constraint firstItem="aCE-KW-npf" firstAttribute="leading" secondItem="rgg-6L-jD6" secondAttribute="leadingMargin" id="wSO-ka-zrR"/>
+                            <constraint firstItem="hwg-av-mfV" firstAttribute="centerY" secondItem="rgg-6L-jD6" secondAttribute="centerY" id="y4k-Gq-hrM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lat-Or-rLE"/>
                     </view>
+                    <connections>
+                        <outlet property="askBtn" destination="fnI-pX-efp" id="2up-Bk-WeM"/>
+                        <outlet property="ballImg" destination="hwg-av-mfV" id="gqi-vW-BsV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ball1" width="305" height="273.5"/>
+    </resources>
 </document>
